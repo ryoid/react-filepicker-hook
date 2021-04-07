@@ -1,6 +1,6 @@
 {
   "name": "react-filepicker-hook",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple React Hook to build a custom FilePicker component.",
   "author": "ryoid",
   "license": "MIT",
