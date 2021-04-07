@@ -13,16 +13,26 @@ npm install --save react-filepicker-hook
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import React from 'react'
 
-import { useMyHook } from 'react-filepicker-hook'
+import { useFilePicker } from 'react-filepicker-hook'
 
 const Example = () => {
-  const example = useMyHook()
+  const { files, showFilePicker, errors, FileInput } = useFilePicker({
+    minSize: 10000 // Size in Bytes
+  })
+
   return (
-    <div>
-      {example}
-    </div>
+    <>
+      <button onClick={showFilePicker}>Show FileInput</button>
+      <FileInput accept="image/*" multiple />
+      <div>
+        {errors.map(error => JSON.stringify(error))}
+      </div>
+      <div>
+        {files.map(file => JSON.stringify(file.name))}
+      </div>
+    </>
   )
 }
 ```

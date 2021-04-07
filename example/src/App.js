@@ -36,18 +36,18 @@ const App = () => {
   }, [files])
 
   return (
-    <>
+    <div>
       <button onClick={showFilePicker}>Show FileInput</button>
       <FileInput accept="image/*" multiple />
       <div>
         {errors.map(error => JSON.stringify(error))}
       </div>
-      <div style={{ maxWidth: 250 }}>
+      <div>
         {images.map((file, i) => (
           <img src={file} key={i} alt={`file-${i}`} />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 export default App
