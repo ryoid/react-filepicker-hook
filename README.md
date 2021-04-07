@@ -18,13 +18,15 @@ import React from 'react'
 import { useFilePicker } from 'react-filepicker-hook'
 
 const Example = () => {
-  const { files, showFilePicker, errors, FileInput } = useFilePicker({
-    minSize: 10000 // Size in Bytes
+  const { files, errors, FileInput, showFilePicker } = useFilePicker({
+    minSize: 10000, // Size in Bytes
+    maxSize: 10000000 // Size in Bytes
   })
 
   return (
     <>
       <button onClick={showFilePicker}>Show FileInput</button>
+      {/* Include hidden input field and pass regular HTMLInput props */}
       <FileInput accept="image/*" multiple />
       <div>
         {errors.map(error => JSON.stringify(error))}
