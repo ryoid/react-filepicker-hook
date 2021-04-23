@@ -45,6 +45,7 @@ export const useFilePicker = ({
 
   return {
     files,
+    setFiles,
     errors,
     showFilePicker,
     FileInput(inputProps: FileInputProps): React.ReactElement {
